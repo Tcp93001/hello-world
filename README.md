@@ -1,2 +1,5 @@
-# hello-world
-Este es el primer repositorio que voy a crear en 2016
+Soy un ingeniero que ha dejado un poco lejos esta parte de la profesión. Estoy iniciándome de nuevo para 
+averiguar cómo puedo mejorar en varios aspectos, incluyendo el económico.
+
+Saludos!
+
