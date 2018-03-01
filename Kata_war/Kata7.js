@@ -41,3 +41,37 @@ function validatePin(pin) {
 //function validatePIN(pin) {
 //     return /^(\d{4}|\d{6})$/.test(pin)
 // }
+
+/// KATA 2   ////
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+
+// Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+// Rules:
+// You need to round the answer to 2 decimal places and return it as String.
+
+// If the given value is 0 then it should return 0.00
+
+// You will only be given Natural Numbers as arguments.
+
+let n = 2;
+console.log(SeriesSum(n));
+
+function SeriesSum(n)
+{
+    let datos = 0;
+// Esta parte define si la entrada es '0', entonces la salida será '0.00'
+    if (n === 0) {
+        return datos.toFixed(2);
+    }
+ //Colocamos 'a' como negativo para que se inicie el algoritmo con un divisor 1 al sumar 3...   
+    let a = -2;
+    let i = 1;
+/// Esto hace que la primera iteración del algoritmo sea 1/1, la segunda 1/4, tercera 1/7, etc.
+    while (i <= n) {
+        a += 3;
+        datos += (1/a);
+        i++;
+    }
+    return datos.toFixed(2);
+}
+
