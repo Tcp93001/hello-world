@@ -74,15 +74,26 @@ var destinos = [{
 // 	}
 // }
 
-function registro() {}
+function registroTabla() {
 
+	let name = $("#datosUsers").find("#nombre2").val();
+	let direccion = $("#datosUsers").find("#direccion2").val();
+	let telefono = $("#datosUsers").find("#telefono2").val();
+	
+	let agregaTabla = "<tr><td>" + name + "</td><td>" + direccion + "</td><td>" + telefono + "</td></tr>";
 
+	$("#registroFinal").append(agregaTabla);
 
+	alert("Se ha agregado al usuario "+name+" en nuestro registro");
+
+	name = $("#datosUsers").find("#nombre2").val("");
+	direccion = $("#datosUsers").find("#direccion2").val("");
+	telefono = $("#datosUsers").find("#telefono2").val("");
+
+}
 
 function cambiosHTML(){ 
 		for (var i = 0; i < destinos.length; i++) { 
-			console.log("Entramos a función");
-			
 			let agregaHTML = "<div class=\"panel panel-default\"><div class=\"panel-body recargado\">";
 			agregaHTML += "<p>"+destinos[i].id+"</p><p>"+destinos[i].nombre;
 			agregaHTML += "</p><p>"+destinos[i].destino+"</p><p>"+destinos[i].precio;
@@ -93,14 +104,3 @@ function cambiosHTML(){
 
 		};
 };
-
-
-/*Remind parameters*/
-//sintaxis jquery que recibe un identificador para saber a donde imprimirá los elementos de cada objeto del arreglo
-//append es un metodo de jquery para manipular el dom, 
-//en este caso se uso para imprimir 
-//elementos html en un identificador especifico
-//jquery recibe html mediante strings por lo que se utiliza el +
-//para concatenar
-// se concatena cada elemento del objeto para que se imprima cadq uno
-//de forma independiente 
