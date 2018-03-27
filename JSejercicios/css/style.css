@@ -1,0 +1,4 @@
+cloak {
+    transition-timing-function: ease-in-out;
+    transition: show 2s;
+}
