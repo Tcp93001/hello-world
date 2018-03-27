@@ -92,19 +92,22 @@ function alerta(caso){
 
 }
 
-
 function successfulRegister() {
+    
     let url = "https://www.w3schools.com/js/demo_post.asp";
-
+    let resultados = document.getElementById('alert-box');
     let req = new XMLHttpRequest();
     req.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("alert-box").innerHTML = this.responseText;
+        resultados.classList.remove("hidden");
       }
     };
-    req.open("POST", url, true);
+    req.open("POST", url, false);
     req.send(JSON.stringify(userObject));
 
+    setTimeout(function(){resultados.classList.add('hidden')}, 3000);
     alert("usuario registrado");
+    
 
 }
