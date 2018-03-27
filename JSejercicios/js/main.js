@@ -26,10 +26,9 @@ function load(selectedLink, element) {
 
 }
 
+var userObject = {};
 
 function saveUser() {
-
-    var userObject = {};
 
     userObject.userName = document.getElementById('user-name').value;    
     userObject.userMail = document.getElementById('user-mail').value;
@@ -78,7 +77,7 @@ function alerta(caso){
     } else if (caso === 2){
         cajaAlerta.innerHTML = "<hr><p class=\"text-center\">No capturaste un correo válido</p>";
     } else if (caso === 3){
-        cajaAlerta.innerHTML = "<hr><p class=\"text-center\">No capturaste una constraseña!</p>";
+        cajaAlerta.innerHTML = "<hr><p class=\"text-center\">No capturaste una contraseña!</p>";
     } else if (caso === 4) {
         cajaAlerta.innerHTML = "<hr><p class=\"text-center\">Tu contraseña no coincide</p>";
     } else {
@@ -95,8 +94,17 @@ function alerta(caso){
 
 
 function successfulRegister() {
+    let url = "https://www.w3schools.com/js/demo_post.asp";
+
+    let req = new XMLHttpRequest();
+    req.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("alert-box").innerHTML = this.responseText;
+      }
+    };
+    req.open("POST", url, true);
+    req.send(JSON.stringify(userObject));
+
     alert("usuario registrado");
 
 }
-
-
